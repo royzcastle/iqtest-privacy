@@ -7,66 +7,238 @@
 <style>
   :root { --ink:#22263a; --muted:#666e8a; --accent:#5b5bd6; --card:#f6f7fb; --border:#e3e6f0; }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; color:var(--ink); background:#fff; line-height:1.75; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"PingFang SC","Microsoft YaHei",sans-serif; color:var(--ink); background:#fff; line-height:1.75; }
   .wrap { max-width:760px; margin:0 auto; padding:48px 24px 80px; }
-  header { border-bottom:3px solid var(--accent); padding-bottom:20px; margin-bottom:32px; }
+  header { border-bottom:3px solid var(--accent); padding-bottom:20px; margin-bottom:24px; }
   h1 { font-size:26px; margin-bottom:6px; }
   .sub { color:var(--muted); font-size:14px; }
-  h2 { font-size:18px; margin:32px 0 10px; color:var(--accent); }
+  h2 { font-size:18px; margin:30px 0 10px; color:var(--accent); }
   p, li { font-size:15px; color:var(--ink); }
   ul { padding-left:22px; margin:8px 0; }
+  li { margin:4px 0; }
   .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 20px; margin:14px 0; }
+  .langbar { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:28px; }
+  .langbar button { font:inherit; font-size:13px; padding:6px 14px; border:1px solid var(--border); background:#fff; color:var(--muted); border-radius:999px; cursor:pointer; }
+  .langbar button.active { border-color:var(--accent); color:#fff; background:var(--accent); }
+  .note { font-size:13px; color:var(--muted); margin-top:10px; }
   a { color:var(--accent); }
+  [hidden] { display:none !important; }
   footer { margin-top:48px; color:var(--muted); font-size:13px; border-top:1px solid var(--border); padding-top:16px; }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header>
-    <h1>IQ Test Privacy Policy</h1>
-    <div class="sub">Effective date: November 9, 2026 · Last updated: November 9, 2026</div>
-  </header>
+  <nav class="langbar" aria-label="Language">
+    <button type="button" data-set="en">English</button>
+    <button type="button" data-set="zh">简体中文</button>
+    <button type="button" data-set="tw">繁體中文</button>
+  </nav>
 
-  <h2>1. Introduction</h2>
-  <p>Welcome to IQ Test ("the App"). Your privacy matters to us. This policy explains what information the App processes, how it is handled, and the choices you have. By using the App, you agree to this policy.</p>
+  <div class="lang" data-lang="en">
+    <header>
+      <h1>IQ Test Privacy Policy</h1>
+      <div class="sub">Effective date: November 11, 2026 · Last updated: November 11, 2026</div>
+    </header>
+    <p class="note">This policy applies to IQ Test on both Android and iOS. If translations differ, the English version prevails.</p>
 
-  <h2>2. Information We Collect</h2>
-  <div class="card">
-    <p><strong>The App requires no sign-up and does not collect personal identifying information such as your name, email address, phone number or location.</strong></p>
+    <h2>1. Introduction</h2>
+    <p>IQ Test ("the App") is a self-assessment puzzle app. We do not operate a backend service, and the App requires no account, sign-up or login. This policy explains what the App stores on your device and what the advertising SDK may process.</p>
+
+    <h2>2. Information stored on your device</h2>
+    <div class="card">
+      <p><strong>We do not collect personal identifying information such as your name, email address, phone number or precise location, and we do not receive your test answers or scores.</strong></p>
+      <ul>
+        <li>Test results and history are stored <strong>locally on your device only</strong> and are never uploaded to any server;</li>
+        <li>Your language preference is stored locally so the App opens in the language you chose;</li>
+        <li>Uninstalling the App or clearing its data permanently removes all local records.</li>
+      </ul>
+    </div>
+
+    <h2>3. Advertising and third-party services</h2>
+    <div class="card">
+      <p><strong>Current version: ad-free.</strong> This release does not display any advertisements, does not initialize the AdMob SDK and does not show a consent form. The AdMob SDK is bundled in the app package for a possible future update; that update will come with a revised policy and a refreshed data-safety declaration before any ad is shown.</p>
+    </div>
+    <p>The App is free. Apart from the AdMob SDK described above, the App contains no analytics, crash reporting or tracking SDK.</p>
     <ul>
-      <li>Your test scores and history are stored <strong>locally on your device only</strong> and are never uploaded to any server;</li>
-      <li>Uninstalling the App or clearing its data permanently removes all local records.</li>
+      <li>When ads are enabled in a future version, AdMob may process your <strong>advertising identifier, IP-based coarse location, device information and ad interaction data</strong> to serve and measure advertisements. This data goes to Google under <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>, not to us;</li>
+      <li>In the EEA, the UK and other regions where consent is required, a Google consent form (UMP) will then be shown before ads begin, so you can choose whether personalized ads are allowed;</li>
+      <li>You can reset or opt out of ad personalization at any time in your device settings (Android: Settings → Google → Ads; iOS: Settings → Privacy &amp; Security → Tracking).</li>
     </ul>
+
+    <h2>4. Permissions</h2>
+    <ul>
+      <li><strong>Internet and network state</strong> are used solely to load and measure advertisements. The App itself makes no other network requests and sends no test data;</li>
+      <li><strong>Advertising ID</strong> (Android AD_ID) is used by AdMob for ad delivery and measurement, subject to your consent choices;</li>
+      <li>The App does <strong>not</strong> access your photos, contacts, microphone, camera, files or precise GPS location. Additional low-risk permissions declared by the underlying system libraries are not used to collect personal data.</li>
+    </ul>
+
+    <h2>5. Children's privacy</h2>
+    <p>The App is not directed at children under 13 (or the minimum age in your country) and does not knowingly collect personal information from children. Ad requests are configured as non-child-directed in line with Google's advertising policies.</p>
+
+    <h2>6. Your rights</h2>
+    <ul>
+      <li>Because all test records stay on your device, you can delete them completely at any time by uninstalling the App or clearing its data;</li>
+      <li>Under GDPR you may request access, correction, deletion or restriction of your data and withdraw consent at any time. We hold no copy of your data, so deletion is performed on your device; consent for personalized ads can be withdrawn as described in section 3;</li>
+      <li>We do not sell personal information. If you are in a US state with a "Do Not Sell or Share" right, choosing non-personalized ads in the consent form prevents sharing for cross-context behavioural advertising. We will not discriminate against you for exercising these rights;</li>
+      <li>For advertising data held by Google, please use Google's privacy controls or contact us using the address below.</li>
+    </ul>
+
+    <h2>7. Data retention and security</h2>
+    <p>All App data remains on your device until you delete it or uninstall the App. As no data is transmitted to us, there is no server-side retention period and no third-party data processor other than Google AdMob.</p>
+
+    <h2>8. Changes to this policy</h2>
+    <p>Updates will be published on this page with a new effective date. Material changes will also be reflected in the App's store listing where required.</p>
+
+    <h2>9. Contact</h2>
+    <p>Questions or requests about this policy: <strong>royzcastle@gmail.com</strong> · <a href="terms.html">Terms of Service</a></p>
+    <footer>© 2026 IQ Test. All rights reserved.</footer>
   </div>
 
-  <h2>3. Advertising &amp; Third-Party Services</h2>
-  <p>The App displays ads served by Google AdMob, which supports the App's free availability:</p>
-  <ul>
-    <li>AdMob may collect <strong>device identifiers, coarse location (based on IP) and app interaction data</strong> in order to serve and measure advertisements;</li>
-    <li>In the EEA and the UK, a Google consent management form (UMP) appears on first launch, letting you freely choose whether personalized ads are allowed;</li>
-    <li>You may reset your advertising identifier or opt out of ad personalization at any time (Android: Settings → Google → Ads).</li>
-  </ul>
-  <p>Google's privacy policy: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">https://policies.google.com/privacy</a></p>
+  <div class="lang" data-lang="zh" hidden>
+    <header>
+      <h1>「IQ Test」隐私政策</h1>
+      <div class="sub">生效日期：2026 年 11 月 11 日 · 最后更新：2026 年 11 月 11 日</div>
+    </header>
+    <p class="note">本政策适用于 Android 与 iOS 版本的 IQ Test。各语言版本如有歧义，以英文版为准。</p>
 
-  <h2>4. Children's Privacy</h2>
-  <p>The App is not directed at children under 13 and does not knowingly collect personal information from children. Ad serving is configured as non-child-directed in line with Google's advertising policies.</p>
+    <h2>1. 引言</h2>
+    <p>IQ Test（下称「本应用」）是一款自测类益智应用。我们不运营后端服务，本应用无需账号、注册或登录。本政策说明本应用在您的设备上存储哪些内容，以及广告 SDK 可能处理哪些信息。</p>
 
-  <h2>5. Permissions</h2>
-  <ul>
-    <li><strong>Nearby devices / network access:</strong> used only in development builds to connect to a local development server; the released production build does not use this permission;</li>
-    <li>The App does not access your photos, contacts, microphone or camera.</li>
-  </ul>
+    <h2>2. 存储在您设备上的信息</h2>
+    <div class="card">
+      <p><strong>我们不收集姓名、电子邮箱、电话号码、精确位置等个人身份信息，也不会收到您的答题内容与成绩。</strong></p>
+      <ul>
+        <li>测试结果与历史记录<strong>仅保存在您的设备本地</strong>，绝不会上传到任何服务器；</li>
+        <li>语言偏好保存在本地，以便下次以您选择的语言打开；</li>
+        <li>卸载应用或清除应用数据即可永久删除全部本地记录。</li>
+      </ul>
+    </div>
 
-  <h2>6. Your Rights</h2>
-  <p>Since all test records are stored locally, you can delete them completely at any time by uninstalling the App or clearing its data. For advertising-related data, please exercise your rights through Google's privacy policy linked above.</p>
+    <h2>3. 广告与第三方服务</h2>
+    <div class="card">
+      <p><strong>当前版本：不含广告。</strong>本版本不展示任何广告、不初始化 AdMob SDK、不弹出同意表单。应用包内保留了 AdMob SDK，供未来可能的更新使用；届时在展示任何广告前，我们会先更新本政策并重新提交数据安全声明。</p>
+    </div>
+    <p>本应用免费。除上述 AdMob SDK 外，应用内不含任何分析、崩溃上报或追踪 SDK。</p>
+    <ul>
+      <li>若未来版本启用广告，AdMob 可能处理您的<strong>广告标识符、基于 IP 的大致位置、设备信息及广告互动数据</strong>，用于投放与衡量广告。这些数据依据 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隐私政策</a>由 Google 处理，不会提供给我们；</li>
+      <li>在欧洲经济区、英国及其他依法需要同意的地区，届时会先显示 Google 同意表单（UMP），由您自主选择是否允许个性化广告；</li>
+      <li>您可随时在设备设置中重置广告标识符或关闭广告个性化（Android：设置 → Google → 广告；iOS：设置 → 隐私与安全性 → 跟踪）。</li>
+    </ul>
 
-  <h2>7. Changes to This Policy</h2>
-  <p>Updates to this policy will be published on this page with a new effective date.</p>
+    <h2>4. 权限说明</h2>
+    <ul>
+      <li><strong>互联网与网络状态</strong>仅用于加载和衡量广告。应用本身不发起其他网络请求，也不发送任何测试数据；</li>
+      <li><strong>广告标识符</strong>（Android AD_ID）由 AdMob 依据您的同意选择用于广告投放与效果衡量；</li>
+      <li>本应用<strong>不会</strong>访问您的照片、通讯录、麦克风、相机、文件或精确 GPS 位置。底层系统库声明的其他低风险权限不用于收集个人数据。</li>
+    </ul>
 
-  <h2>8. Contact</h2>
-  <p>Questions or requests about this policy: <strong>royzcastle@gmail.com</strong></p>
+    <h2>5. 儿童隐私</h2>
+    <p>本应用不面向 13 岁以下儿童（或您所在国家规定的最低年龄），也不会在知情情况下收集儿童个人信息。广告请求已按 Google 广告政策配置为非儿童导向。</p>
 
-  <footer>© 2026 IQ Test. All rights reserved.</footer>
+    <h2>6. 您的权利</h2>
+    <ul>
+      <li>由于所有测试记录都保存在设备本地，您可随时通过卸载应用或清除数据将其彻底删除；</li>
+      <li>依据 GDPR，您可要求访问、更正、删除或限制处理您的数据，并随时撤回同意。我们不保存任何副本，因此删除操作在您的设备上完成；个性化广告的同意可按第 3 节方式撤回；</li>
+      <li>我们不出售个人信息。若您所在美国州份赋予「不得出售或共享」权利，在同意表单中选择非个性化广告即可阻止为跨情境行为广告而共享。我们不会因您行使这些权利而区别对待；</li>
+      <li>Google 持有的广告数据，请使用 Google 的隐私控制工具，或通过下方邮箱与我们联系。</li>
+    </ul>
+
+    <h2>7. 数据保留与安全</h2>
+    <p>应用数据保留在您的设备上，直至您删除或卸载应用。由于数据不会传输给我们，不存在服务器端保留期限；除 Google AdMob 外，也没有其他第三方数据处理者。</p>
+
+    <h2>8. 政策变更</h2>
+    <p>更新将发布在本页面并标注新的生效日期。重大变更也会按要求同步至应用商店页面。</p>
+
+    <h2>9. 联系方式</h2>
+    <p>关于本政策的疑问或请求：<strong>royzcastle@gmail.com</strong> · <a href="terms.html">服务条款</a></p>
+    <footer>© 2026 IQ Test. 保留所有权利。</footer>
+  </div>
+
+  <div class="lang" data-lang="tw" hidden>
+    <header>
+      <h1>「IQ Test」隱私權政策</h1>
+      <div class="sub">生效日期：2026 年 11 月 11 日 · 最後更新：2026 年 11 月 11 日</div>
+    </header>
+    <p class="note">本政策適用於 Android 與 iOS 版本的 IQ Test。各語系版本如有歧義，以英文版為準。</p>
+
+    <h2>1. 前言</h2>
+    <p>IQ Test（下稱「本應用程式」）是一款自測類益智應用程式。我們不營運後端服務，本應用程式無須帳號、註冊或登入。本政策說明本應用程式在您的裝置上儲存哪些內容，以及廣告 SDK 可能處理哪些資訊。</p>
+
+    <h2>2. 儲存於您裝置上的資訊</h2>
+    <div class="card">
+      <p><strong>我們不收集姓名、電子郵件、電話號碼、精確位置等個人身分資訊，也不會收到您的答題內容與成績。</strong></p>
+      <ul>
+        <li>測驗結果與歷史紀錄<strong>僅儲存在您的裝置本機</strong>，絕不會上傳至任何伺服器；</li>
+        <li>語言偏好儲存在本機，以便下次以您選擇的語言開啟；</li>
+        <li>解除安裝應用程式或清除應用程式資料即可永久刪除所有本機紀錄。</li>
+      </ul>
+    </div>
+
+    <h2>3. 廣告與第三方服務</h2>
+    <div class="card">
+      <p><strong>目前版本：不含廣告。</strong>本版本不顯示任何廣告、不初始化 AdMob SDK、不彈出同意表單。應用程式包內保留了 AdMob SDK，供未來可能的更新使用；屆時在顯示任何廣告前，我們會先更新本政策並重新提交資料安全聲明。</p>
+    </div>
+    <p>本應用程式免費。除上述 AdMob SDK 外，應用程式內不含任何分析、當機回報或追蹤 SDK。</p>
+    <ul>
+      <li>若未來版本啟用廣告，AdMob 可能處理您的<strong>廣告識別碼、基於 IP 的大致位置、裝置資訊及廣告互動資料</strong>，用於投放與衡量廣告。這些資料依據 <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 隱私權政策</a>由 Google 處理，不會提供給我們；</li>
+      <li>在歐洲經濟區、英國及其他依法需要同意的地區，屆時會先顯示 Google 同意表單（UMP），由您自主選擇是否允許個人化廣告；</li>
+      <li>您可隨時在裝置設定中重設廣告識別碼或關閉廣告個人化（Android：設定 → Google → 廣告；iOS：設定 → 隱私權與安全性 → 追蹤）。</li>
+    </ul>
+
+    <h2>4. 權限說明</h2>
+    <ul>
+      <li><strong>網際網路與網路狀態</strong>僅用於載入與衡量廣告。應用程式本身不發起其他網路請求，也不傳送任何測驗資料；</li>
+      <li><strong>廣告識別碼</strong>（Android AD_ID）由 AdMob 依據您的同意選擇用於廣告投放與成效衡量；</li>
+      <li>本應用程式<strong>不會</strong>存取您的照片、通訊錄、麥克風、相機、檔案或精確 GPS 位置。底層系統程式庫宣告的其他低風險權限不用於收集個人資料。</li>
+    </ul>
+
+    <h2>5. 兒童隱私</h2>
+    <p>本應用程式不面向 13 歲以下兒童（或您所在國家規定的最低年齡），也不會在知情情況下收集兒童個人資訊。廣告請求已依 Google 廣告政策設定為非兒童導向。</p>
+
+    <h2>6. 您的權利</h2>
+    <ul>
+      <li>由於所有測驗紀錄都儲存在裝置本機，您可隨時透過解除安裝或清除資料將其徹底刪除；</li>
+      <li>依據 GDPR，您可要求存取、更正、刪除或限制處理您的資料，並隨時撤回同意。我們不保存任何副本，因此刪除作業在您的裝置上完成；個人化廣告的同意可依第 3 節方式撤回；</li>
+      <li>我們不出售個人資訊。若您所在美國州份賦予「不得出售或共享」權利，在同意表單中選擇非個人化廣告即可阻止為跨情境行為廣告而共享。我們不會因您行使這些權利而差別對待；</li>
+      <li>Google 持有的廣告資料，請使用 Google 的隱私控制工具，或透過下方信箱與我們聯繫。</li>
+    </ul>
+
+    <h2>7. 資料保留與安全</h2>
+    <p>應用程式資料保留在您的裝置上，直到您刪除或解除安裝。由於資料不會傳輸給我們，不存在伺服器端保留期限；除 Google AdMob 外，也沒有其他第三方資料處理者。</p>
+
+    <h2>8. 政策變更</h2>
+    <p>更新將發布於本頁面並標註新的生效日期。重大變更也會依規定同步至應用程式商店頁面。</p>
+
+    <h2>9. 聯絡方式</h2>
+    <p>關於本政策的疑問或請求：<strong>royzcastle@gmail.com</strong> · <a href="terms.html">服務條款</a></p>
+    <footer>© 2026 IQ Test. 保留所有權利。</footer>
+  </div>
 </div>
+<script>
+  (function () {
+    var langs = ['en', 'zh', 'tw'];
+    var htmlLang = { en: 'en', zh: 'zh-Hans', tw: 'zh-Hant' };
+    var buttons = document.querySelectorAll('.langbar button');
+    function set(lang) {
+      langs.forEach(function (k) {
+        document.querySelectorAll('[data-lang="' + k + '"]').forEach(function (el) {
+          el.hidden = k !== lang;
+        });
+      });
+      buttons.forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-set') === lang);
+      });
+      document.documentElement.lang = htmlLang[lang];
+      if (window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', '#' + lang);
+      }
+    }
+    buttons.forEach(function (b) {
+      b.addEventListener('click', function () { set(b.getAttribute('data-set')); });
+    });
+    var initial = (window.location.hash || '').replace('#', '');
+    set(langs.indexOf(initial) !== -1 ? initial : 'en');
+  })();
+</script>
 </body>
 </html>
